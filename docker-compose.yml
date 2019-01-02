@@ -1,0 +1,10 @@
+version: '3'
+services:
+  shadowsocksr:
+    build: .
+    image: shadowsocksr
+    container_name: shadowsocksr_server
+    ports:
+      - "${SSR_SERVER_PORT}:${SSR_SERVER_PORT}"
+    env_file: .env
+    restart: unless-stopped
